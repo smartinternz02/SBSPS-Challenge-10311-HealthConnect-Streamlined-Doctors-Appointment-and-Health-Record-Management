@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HealthCare</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="logo">
+                <h2>Health Connect</h2>
+            </div>
+            <div class="links">
+                <a href="/login" class="mainlink">Login</a>
+                <a href="/register" class="mainlink">Register</a>
+                <a href="#about"class=mainlink>About us</a>
+            </div>
+        </div>
+
+        <!-- LANDING PAGE -->
+
+        <div class="landing">
+            <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>Book <span style="color:#e0501b;font-size: 4vw"> Appointment</span> </h1>
+                <h1>Manege your <span style="color:#e0501b;font-size: 4vw"> Health Records</span> </h1>
+                <br>
+                <div class="btn" >
+                    <a href="/appointment" >
+                    <button class="transparent-button"> <b> Book An Appointment</b> </button>
+                    </a>
+                </div>
+                <div class="btn" >
+                    <a href="/record" >
+                    <button class="transparent-button"> <b> Manege Your Health Records</b> </button>
+                    </a>
+                </div>
+
+            </div>
+            <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
+                <img src="{{ url_for('static',filename='images/bg.png') }}" alt="">
+            </div>
+        </div>
+
+
+
+        <div >
+            <div id="myForm"    style="padding: 40px 40px">
+                <h3 >Book Appointment</h3>
+                <form action="insert.php"  method="post">
+                <div  style="margin-top: 40px">
+                    <div ><label class="h6">Name *</label>
+                        <div class="form-group" style="margin-top: 10px"><input name="name" class="form-control" type="text"
+                                placeholder="Full Name * "></input></div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px"><label class="h6">Email address *</label>
+                        <div  class="form-group" style="margin-top: 10px"><input required name="email" class="form-control" type="text"
+                                placeholder="example@gmail.com  "></input></div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px"><label class="h6">Departement *</label>
+                        <div class="form-group" style="margin-top: 10px">
+                            <select name="department" class="custom-select form-control" style="margin-top: 10px">
+                                <option>Please Select</option><svg width="8" height="14" viewBox="0 0 8 14"
+                                    fill="none" >
+                                    <path d="M 0 12 L 5 7 L 0 2 L 1 0 L 8 7 L 1 14 L 0 12 Z"
+                                        fill="rgb(115, 115, 115)" />
+                                </svg>
+                                <option>Cardiology</option>
+                                <option>Gynocology</option>
+                                <option>Gastroenterology</option>
+                                <option>Physician</option>
+                                <option>Microbiology</option>
+                            </select></div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px"><label class="h6">Time *</label>
+                        <div class="form-group" style="margin-top: 10px">
+                            <select name="time" class="custom-select form-control">
+                                <option>Available</option><svg width="8" height="14" viewBox="0 0 8 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M 0 12 L 5 7 L 0 2 L 1 0 L 8 7 L 1 14 L 0 12 Z"
+                                        fill="rgb(115, 115, 115)" />
+                                </svg>
+                                <option>9:00 AM</option>
+                                <option>12:00 PM</option>
+                                <option>3:00 PM</option>
+                                <option>6:00 PM</option>
+                                <option>9: 00 PM</option>
+                            </select></div>
+                    </div> <br>
+                <div>
+                    <label for="appointment_date">Appointment Date:</label>
+
+                    <div>
+                        
+                        <input type="date" id="appointment_date" name="appointment_date" 
+                        min="2023-05-03" required>
+
+
+                    </div>                    
+                </div>
+
+
+                </div>
+                          <button class="show-form" onclick="toggleForm()" style="margin-top: 40px"><span>Book
+                                  Appointment</span></button>
+                    </form>             
+                </div>
+            </div>
+
+
+
+
+
+        <!-- ABOUT SECTION -->
+
+        <div id="about" class="about">
+            <div class="aboutText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>About <br> <span style="color:#2f8be0;font-size:3vw">Health Connect</span> </h1>
+                <img src="{{ url_for('static',filename='images/doctor-woman-400px.png') }}"alt="">
+            </div>
+            <div class="aboutList" data-aos="fade-left" data-aos-duration="1000">
+                <ol>
+                    <li> 
+                        <span>01</span>
+                         <p>A free platform to manege your health Records</p>
+                    </li>
+                    <li> 
+                        <span>02</span>
+                         <p>Easy way to get Appointment with Specialised doctors</p>
+                    </li>
+                    <li> 
+                        <span>03</span>
+                         <p>Its easy to maintain your health records and update your health condition</p>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+
+        <!-- INFO SECTION -->
+
+        <div class="infoSection">
+            <div class="infoHeader" data-aos="fade-up" data-aos-duration="1000">
+                <h1> Things you can do with this <br> <span style="color:#e0501b">Health Connect</span> </h1>
+            </div>
+            <div class="infoCards">
+                <div class="card one" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="{{ url_for('static',filename='images/movie.png') }}" class="cardoneImg" alt="" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Find a Doctor</h2>
+                        <p>Book an appointment</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="{{ url_for('static',filename='images/next.png') }}"alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card two" data-aos="fade-up" data-aos-duration="1300">
+                    <img src="{{ url_for('static',filename='images/learn.png') }}" class="cardtwoImg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="cardbgtwo"></div>
+                    <div class="cardContent">
+                        <h2>Is your health records looks messy?</h2>
+                        <p>Organise it with us</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="{{ url_for('static',filename='images/next.png') }}" alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card three" data-aos="fade-up" data-aos-duration="1600">
+                    <img src="{{ url_for('static',filename='images/videocall.png') }}" class="cardthreeImg" alt="" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Want reminders?</h2>
+                        <p> We do it for you</p>
+                        <a href="#">
+                            <div class="cardBtn">
+                                <img src="{{ url_for('static',filename='images/next.png') }}" alt="" class="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BANNER AND FOOTER -->
+    
+
+        <div class="footer">
+            <h2>HealthCare.</h2>
+            <div class="footerlinks">
+                <a href="login.html" class="mainlink">Login</a>
+                <a href="register.html"class="mainlink">Register</a>
+                <a href="#about" class="mainlink">About us</a>
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
+</body>
+</html>

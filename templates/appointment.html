@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/register.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/my-login.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="brand">
+            <img src="{{ url_for('static',filename='images/logo.jpg') }}" alt="logo image" >
+
+        </div>
+        <h1>Book Appointment</h1>
+        <form action="/appointment" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Please Select</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Gynecology">Gynecology</option>
+                    <option value="Gastroenterology">Gastroenterology</option>
+                    <option value="Physician">Physician</option>
+                    <option value="Microbiology">Microbiology</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" min="2023-09-01" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <select id="time" name="time" required>
+                    <option value="">Available</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                </select>
+            </div>
+            <button type="submit">Book Appointment</button>
+            <div class="mt-4 text-center">
+                Back to <a href="/">Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
