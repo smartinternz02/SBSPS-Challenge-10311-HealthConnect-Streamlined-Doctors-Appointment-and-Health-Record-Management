@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Health Records</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="logo">
+                <h2>Health Connect</h2>
+            </div>
+            <div class="links">
+                <a href="/" class="mainlink">Home</a>
+                <a href="/login" class="mainlink">Login</a>
+                <a href="/register" class="mainlink">Register</a>
+                <a href="#about"class=mainlink>About us</a>
+            </div>
+        </div>
+
+        <!-- LANDING PAGE -->
+
+        <div class="landing">
+            <div class="landingText" data-aos="fade-up" data-aos-duration="1000">
+                <h1>your <span style="color:#e0501b;font-size: 4vw"> Health Records</span> </h1>
+                {% with messages = get_flashed_messages() %}
+									{% if messages %}
+                                    
+                                    <h2><br>{{ messages[0] }}</h2>
+                                   
+									{% endif %}
+								{% endwith %}
+                <br>
+                <div class="btn" >
+                    <a href="/record" >
+                    <button class="transparent-button"> <b> Add or Update health records</b> </button>
+                    </a>
+                </div>
+                <div class="btn" >
+                    <a href="/healthdetails" >
+                    <button class="transparent-button"> <b> Show My health record</b> </button>
+                    </a>
+                </div>
+
+            </div>
+            <div class="landingImage" data-aos="fade-down" data-aos-duration="2000">
+                <img src="{{ url_for('static',filename='images/bg.png') }}" alt="">
+            </div>
+        </div>
+
+
+        <!-- BANNER AND FOOTER -->
+    
+
+        
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+            AOS.init();
+    </script>
+</body>
+</html>
