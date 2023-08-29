@@ -1,8 +1,8 @@
 from flask import Flask,render_template,request,session,flash
 import ibm_db
 app=Flask(__name__)
-conn=ibm_db.connect("DATABASE=bludb;HOSTNAME=fbd88901-ebdb-4a4f-a32e-9822b9fb237b.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;\
-                    PORT=32731;UID=klm67409;PWD=hwg2Nu5G2huw2k5C;security=SSL;sslcertificate=DigiCertGlobalRootCA.crt",' ',' ')
+conn=ibm_db.connect("DATABASE=bludb;HOSTNAME="Your Host Name";\
+                    PORT=UP;UID=Your UID;PWD=Your Password ;security=SSL;sslcertificate=DigiCertGlobalRootCA.crt",' ',' ')
 print(conn)
 connstate=ibm_db.active(conn)
 print(connstate)
